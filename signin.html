@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>КП Европа</title>
+
+    <!-- manifest meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/img/icons/apple-icon-180x180.png" sizes="180x180">
+    <link rel="icon" href="assets/img/icons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/img/icons/favicon-16x16.png" sizes="16x16" type="image/png">
+
+    <!-- Google fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- style css for this template -->
+    <link href="assets/css/style.css" rel="stylesheet" id="style">
+</head>
+
+<body class="body-scroll d-flex flex-column h-100" data-page="signin">
+
+    <!-- loader section -->
+    <div class="container-fluid loader-wrap">
+        <div class="row h-100">
+        <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+            <div class="loader-cube-wrap mx-auto" style="width: 250px;">
+                <img src="assets/img/logo_splash.png" alt="Logo">
+            </div>
+        
+        </div>
+        </div>
+    </div>
+    <!-- loader section ends -->
+
+    <!-- Begin page content -->
+    <main class="container-fluid h-100">
+        <div class="row h-100 overflow-auto">
+            <div class="col-12 text-center mb-auto px-0">
+                <header class="header">
+                    <div class="row">
+                        <div class="col-auto"></div>
+                        <div class="col">
+                            <div class="logo-small">
+                                <img src="assets/img/logo.png" alt="">
+                                
+                            </div>
+                        </div>
+                        <div class="col-auto"></div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto align-self-center text-center py-4">
+                <h1 class="mb-4 text-color-theme">ВХОД</h1>
+                <form class="was-validated needs-validation" novalidate>
+                    <div class="form-group form-floating mb-3 is-valid">
+                        <input value="+79175464681" type="text" class="form-control" value="" id="email" placeholder="Username">
+                        <label class="form-control-label" for="email">Телефон</label>
+                    </div>
+
+                    <div class="form-group form-floating is-invalid mb-3">
+                        <input type="password" value="weefwdvfegwe" class="form-control " id="password" placeholder="Password">
+                        <label class="form-control-label" for="password">Пароль</label>
+                        <button type="button" class="text-danger tooltip-btn" data-bs-toggle="tooltip"
+                            data-bs-placement="left" title="Введен неверный пароль" id="passworderror">
+                            <i class="bi bi-info-circle"></i>
+                        </button>
+                    </div>
+                    <p class="mb-3 text-center">
+                        <a href="forgot-password.html" class="">
+                           Забыли пароль?
+                        </a>
+                    </p>
+
+                    <button type="button" class="btn btn-lg btn-default w-100 mb-4 shadow"
+                        onclick="window.location.replace('index.html');">
+                        Войти
+                    </button>
+                </form>
+                <p class="mb-2 text-muted">Еще нет аккаунта?</p>
+                <a href="signup.html" target="_self" class="">
+                    Регистрация <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </div>
+            
+        </div>
+    </main>
+
+
+    <!-- Required jquery and libraries -->
+    <script>
+        let phonePlace = document.getElementById('email')
+        phonePlace.addEventListener('click', function () {
+            if (phonePlace.value == '') {
+                phonePlace.value = '+7'
+            }
+        }) 
+    </script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="assets/js/jquery.cookie.js"></script>
+
+    <!-- Customized jquery file  -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/color-scheme.js"></script>
+
+    <!-- PWA app service registration and works -->
+    <script src="assets/js/pwa-services.js"></script>
+
+    <!-- page level custom script -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
