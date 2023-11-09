@@ -24,10 +24,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- style css for this template -->
     <link href="assets/css/style.css" rel="stylesheet" id="style">
 </head>
@@ -61,12 +61,12 @@
                     <div class="row">
                         <div class="col-auto">
                             <div class="avatar avatar-44 coverimg rounded-10">
-                                <img src="assets/img/user3.jpg" alt="">
+                                <i class="bi bi-buildings size-32"></i>
                             </div>
                         </div>
                         <div class="col align-self-center px-0">
-                            <p class="mb-0">Екатерина</p>
-                            <p class="text-muted size-12">Печатает...</p>
+                            <p class="mb-0">Чат поселка</p>
+                            <p class="text-muted size-12"></p>
                         </div>
                     </div>
                 </div>
@@ -86,11 +86,18 @@
             <!-- chat user list -->
             <div class="container chat-list">
                 <div class="row no-margin left-chat">
-                    <div class="col-12">
+                    <div class="col-12 chat_message">
+                        <div class="chat_avatar">
+                            <img src="assets/img/user2.jpg" alt="">
+                        </div>
                         <div class="chat-block">
+                            <div class="chat_message_top">
+                                <div class="chat_name">Elena</div>
+                                <div class="chat_phone">89194545454</div>
+                            </div>
                             <div class="row">
                                 <div class="col">
-                                    Привет!
+                                    Всем привет!
                                 </div>
                             </div>
                         </div>
@@ -99,17 +106,25 @@
                         <p class="text-muted small time"><i class="bi bi-check"></i> 9:00 </p>
                     </div>
                 </div>
-                <div class="row no-margin right-chat">
-                    <div class="col-12">
+                <div class="row no-margin left-chat">
+                    <div class="col-12 chat_message">
+                        <div class="chat_avatar">
+                            <img src="assets/img/user1.jpg" alt="">
+                        </div>
                         <div class="chat-block">
+                            <div class="chat_message_top">
+                                <div class="chat_name">Андрей</div>
+                                <div class="chat_phone">89194545454</div>
+                            </div>
                             <div class="row">
+
                                 <div class="col">
                                     Привет!
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 text-end">
+                    <div class="col-12">
                         <p class="text-muted small time"><i class="bi bi-check"></i> 9:10 </p>
                     </div>
                 </div>
@@ -119,11 +134,18 @@
                     </div>
                 </div>
                 <div class="row no-margin left-chat">
-                    <div class="col-12">
+                    <div class="col-12 chat_message">
+                        <div class="chat_avatar">
+                            <img src="assets/img/user1.jpg" alt="">
+                        </div>
                         <div class="chat-block">
+                            <div class="chat_message_top">
+                                <div class="chat_name">Александр</div>
+                                <div class="chat_phone">89194545454</div>
+                            </div>
                             <div class="row">
                                 <div class="col">
-                                    Уже знаешь про собрание в следующий четверг?
+                                    Кто знает во сколько собрание в следующий четверг?
                                 </div>
                             </div>
                         </div>
@@ -135,21 +157,26 @@
                 <div class="row no-margin right-chat">
                     <div class="col-12">
                         <div class="chat-block">
+                            <div class="chat_message_top">
+                                <div class="chat_name">Руслан</div>
+                                <div class="chat_phone">89194545454</div>
+                            </div>
                             <div class="row">
                                 <div class="col">
-                                    Да,конечно. Я обязательно приду!
+                                    в 19 00. Я обязательно приду!
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="col-12 text-end">
                         <p class="text-muted small time"><i class="bi bi-check"></i> 15:10 </p>
                     </div>
                 </div>
-                
-                
+
+
             </div>
-            
+
         </div>
         <!-- main page content ends -->
 
@@ -157,7 +184,8 @@
         <div class="position-fixed bottom-0 start-0 chat-post footer py-3">
             <div class="row mx-0">
                 <div class="col-auto">
-                    <button class="btn btn-primary rounded-15" type="button" data-bs-toggle="modal" data-bs-target="#attachefiles">
+                    <button class="btn btn-primary rounded-15" type="button" data-bs-toggle="modal"
+                        data-bs-target="#attachefiles">
                         <i class="bi bi-plus"></i>
                     </button>
                 </div>
@@ -201,20 +229,21 @@
                             <img src="assets/img/footer_icon.png" class="nav-icon" alt="" />
                         </span>
                         <div class="nav-menu-popover justify-content-between">
-                            <button type="button" class="btn btn-lg btn-icon-text" onclick="window.location.replace('#');">
+                            <button type="button" class="btn btn-lg btn-icon-text"
+                                onclick="window.location.replace('#');">
                                 <i class="bi bi-slash-lg size-32"></i><span>Шлагбаум</span>
                             </button>
-    
+
                             <button type="button" class="btn btn-lg btn-icon-text"
                                 onclick="window.location.replace('bills.html');">
                                 <i class="bi bi-credit-card size-32"></i><span>Платежи</span>
                             </button>
-    
+
                             <button type="button" class="btn btn-lg btn-icon-text"
                                 onclick="window.location.replace('call-specialist.html');">
                                 <i class="bi bi-person-fill-exclamation size-32"></i><span>Заявка</span>
                             </button>
-    
+
                             <button type="button" class="btn btn-lg btn-icon-text"
                                 onclick="window.location.replace('emergency.html');">
                                 <i class="bi bi-house-exclamation size-32"></i><span>Авария</span>
@@ -251,7 +280,8 @@
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
-                                        data-bs-dismiss="modal"><i class="bi bi-file-earmark-image size-32"></i></button>
+                                        data-bs-dismiss="modal"><i
+                                            class="bi bi-file-earmark-image size-32"></i></button>
                                 </div>
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
@@ -264,16 +294,18 @@
                                 </div>
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
-                                        data-bs-dismiss="modal"><i class="bi bi-file-earmark-music size-32"></i></button>
+                                        data-bs-dismiss="modal"><i
+                                            class="bi bi-file-earmark-music size-32"></i></button>
                                 </div>
-                           
+
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
                                         data-bs-dismiss="modal"><i class="bi bi-file-earmark-pdf size-32"></i></button>
                                 </div>
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
-                                        data-bs-dismiss="modal"><i class="bi bi-file-earmark-person size-32"></i></button>
+                                        data-bs-dismiss="modal"><i
+                                            class="bi bi-file-earmark-person size-32"></i></button>
                                 </div>
                                 <div class="col-auto mb-3">
                                     <button class="btn btn-outline-primary avatar-50 avatar p-0 rounded-circle"
@@ -295,7 +327,7 @@
 
 
     <!-- Required jquery and libraries -->
-    
+
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 

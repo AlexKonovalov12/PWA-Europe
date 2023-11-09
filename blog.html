@@ -25,9 +25,9 @@
 
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- swiper carousel css -->
-    <link rel="stylesheet" href="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- style css for this template -->
     <link href="assets/css/style.css" rel="stylesheet" id="style">
@@ -82,35 +82,22 @@
             </div>
 
             <!-- Nifty and Infy -->
-            
+
 
             <!-- categories -->
             <div class="row mb-2">
-                <div class="col-12 px-0">
-                    <div class="swiper-container tagsswiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="tag active">Последние</div>
-                            </div>                            
-                            <div class="swiper-slide">
-                                <div class="tag ">Разное</div>
-                            </div>                            
-                            <div class="swiper-slide">
-                                <div class="tag ">О поселке</div>
-                            </div>                            
-                            <div class="swiper-slide">
-                                <div class="tag ">О мечети</div>
-                            </div>                            
-                            <div class="swiper-slide">
-                                <div class="tag ">О людях</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="swiper-wrapper news_filter">
+                    <div class="tag active" data-name="all">Все</div>
+                    <div class="tag " data-name="other">Разное</div>
+                    <div class="tag " data-name="village">О поселке</div>
+                    <div class="tag " data-name="mosque">О мечети</div>
+                    <div class="tag " data-name="people">О людях</div>
                 </div>
             </div>
+            
             <!-- categories -->
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 news_item">
                     <div class="card mb-4 overflow-hidden shadow-sm bg-primary text-white">
                         <div class="overlay"></div>
                         <div class="coverimg h-100 w-100 position-absolute opacity-5">
@@ -119,7 +106,7 @@
                         <div class="card-body">
                             <div class="row mb-5">
                                 <div class="col align-self-center">
-                                    <span class="tag">О поселке</span>
+                                    <span class="tag" data-name="village">О поселке</span>
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn btn-danger text-white btn-44 rounded-circle shadow-sm">
@@ -131,8 +118,9 @@
                                 </div>
                             </div>
                             <br>
-                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">СРОЧНОЕ СОБРАНИЕ ЖИТЕЛЕЙ 20.06.2023</a>
-                
+                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">СРОЧНОЕ СОБРАНИЕ
+                                ЖИТЕЛЕЙ 20.06.2023</a>
+
                             <div class="small">
                                 <figure class="avatar avatar-20 rounded mx-1">
                                     <i class="bi bi-buildings"></i>
@@ -142,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 news_item">
                     <div class="card mb-4 overflow-hidden shadow-sm bg-primary text-white">
                         <div class="overlay"></div>
                         <div class="coverimg h-100 w-100 position-absolute opacity-5">
@@ -151,7 +139,7 @@
                         <div class="card-body">
                             <div class="row mb-5">
                                 <div class="col align-self-center">
-                                    <span class="tag">Разное</span>
+                                    <span class="tag" data-name="other">Разное</span>
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn btn-danger text-white btn-44 rounded-circle shadow-sm">
@@ -163,8 +151,9 @@
                                 </div>
                             </div>
                             <br>
-                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">ФИШКИ ЗАСТРОЙЩИКОВ ИЛИ ЦЕНА: ЧТО СЕЙЧАС ВАЖНЕЕ ДЛЯ ПОКУПАТЕЛЯ</a>
-                            
+                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">ФИШКИ
+                                ЗАСТРОЙЩИКОВ ИЛИ ЦЕНА: ЧТО СЕЙЧАС ВАЖНЕЕ ДЛЯ ПОКУПАТЕЛЯ</a>
+
                             <div class="small">
                                 <figure class="avatar avatar-20 rounded mx-1">
                                     <img src="assets/img/user2.jpg" alt="">
@@ -174,7 +163,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 news_item">
                     <div class="card mb-4 overflow-hidden shadow-sm bg-primary text-white">
                         <div class="overlay"></div>
                         <div class="coverimg h-100 w-100 position-absolute opacity-5">
@@ -183,7 +172,7 @@
                         <div class="card-body">
                             <div class="row mb-5">
                                 <div class="col align-self-center">
-                                    <span class="tag">Разное</span>
+                                    <span class="tag" data-name="other">Разное</span>
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn btn-danger text-white btn-44 rounded-circle shadow-sm">
@@ -195,8 +184,9 @@
                                 </div>
                             </div>
                             <br>
-                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">ПРОБЛЕМЫ В БЛАГОУСТРОЙСТВЕ КОТТЕДЖНЫХ ПОСЕЛКОВ ПРОШЛОГО, КОТОРЫХ НЕТ В НАСТОЯЩЕМ</a>
-                            
+                            <a href="blog-details.html" class="h4 text-normal d-block text-white mb-2">ПРОБЛЕМЫ В
+                                БЛАГОУСТРОЙСТВЕ КОТТЕДЖНЫХ ПОСЕЛКОВ ПРОШЛОГО, КОТОРЫХ НЕТ В НАСТОЯЩЕМ</a>
+
                             <div class="small">
                                 <figure class="avatar avatar-20 rounded mx-1">
                                     <img src="assets/img/user3.jpg" alt="">
@@ -208,7 +198,7 @@
                 </div>
             </div>
 
-<!-- 
+            <!-- 
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
                     <div class="row">
@@ -292,16 +282,81 @@
                 </div>
             </div>
         </div> -->
-        <!-- main page content ends -->
+            <!-- main page content ends -->
 
     </main>
+    <footer class="footer">
+        <div class="container" style="padding-bottom: 10px;">
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">
+                        <span>
+                            <i class="nav-icon bi bi-house"></i>
+                            <span class="nav-text">Главная</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chat.html">
+                        <span>
+                            <i class="nav-icon bi bi-chat-text"></i>
+                            <span class="nav-text">Сообщения</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item centerbutton">
+                    <div class="nav-link">
+                        <span class="theme-radial-gradient">
+                            <i class="close bi bi-x"></i>
+                            <img src="assets/img/footer_icon.png" class="nav-icon" alt="" />
+                        </span>
+                        <div class="nav-menu-popover justify-content-between">
+                            <button type="button" class="btn btn-lg btn-icon-text" onclick="window.location.replace('#');">
+                                <i class="bi bi-slash-lg size-32"></i><span>Шлагбаум</span>
+                            </button>
+    
+                            <button type="button" class="btn btn-lg btn-icon-text"
+                                onclick="window.location.replace('bills.html');">
+                                <i class="bi bi-credit-card size-32"></i><span>Платежи</span>
+                            </button>
+    
+                            <button type="button" class="btn btn-lg btn-icon-text"
+                                onclick="window.location.replace('call-specialist.html');">
+                                <i class="bi bi-person-fill-exclamation size-32"></i><span>Заявка</span>
+                            </button>
+    
+                            <button type="button" class="btn btn-lg btn-icon-text"
+                                onclick="window.location.replace('emergency.html');">
+                                <i class="bi bi-house-exclamation size-32"></i><span>Авария</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">
+                        <span>
+                            <i class="nav-icon bi bi-newspaper"></i>
+                            <span class="nav-text">Новости</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="settings.html">
+                        <span>
+                            <i class="nav-icon bi bi-person-circle"></i>
+                            <span class="nav-text">Аккаунт</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
     <!-- Page ends-->
 
 
     <!-- Required jquery and libraries -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
     <script src="assets/js/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 
     <!-- cookie js -->
     <script src="assets/js/jquery.cookie.js"></script>
@@ -311,10 +366,8 @@
     <script src="assets/js/color-scheme.js"></script>
 
     <!-- Sparklines js  -->
-    <script src="assets/vendor/sparklines/jquery.sparkline.min.js"></script>
 
     <!-- swiper js script -->
-    <script src="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
 
     <!-- page level custom script -->
     <script src="assets/js/app.js"></script>

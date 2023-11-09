@@ -1,6 +1,8 @@
 'use strict'
 $(document).ready(function () {
-
+    $(".js-example-placeholder-multiple").select2({
+        placeholder: "Выберите получателей"
+    });
     var body = $('body');
     var bodyParent = $('html');
 
@@ -73,7 +75,7 @@ $(document).ready(function () {
 $(window).on('load', function () {
     setTimeout(function () {
         $('.loader-wrap').fadeOut('slow');
-    }, 500);
+    }, 300);
 
     /* coverimg */
     $('.coverimg').each(function () {
@@ -121,3 +123,29 @@ $(window).on('resize', function () {
     /* main container min height */
     $('main').css('min-height', $(window).height())
 });
+
+const filter = document.querySelector(".news_filter");
+const newsItems = document.querySelectorAll(".news_item");
+
+
+filter.addEventListener('click', (event) => {
+    if (event.target.classList.contains("tag")) {
+        filter.querySelector(".active").classList.remove("active");
+        event.target.classList.add("active");
+        let tag = event.target.dataset.name
+        newsItems.forEach(element => {
+            if (tag == "all") {
+                element.classList.add("show_news")
+                return;
+            }
+            element.classList.remove("show_news")
+            if (element.querySelector(".tag").dataset.name == tag) {
+                element.classList.add("show_news")
+            } else {
+                element.classList.add("hide_news")
+            }
+
+        });
+    }
+})
+

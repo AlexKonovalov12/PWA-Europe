@@ -4,7 +4,6 @@ if ("serviceWorker" in navigator) {
     window.addEventListener("load", function (event) {
         navigator.serviceWorker
             .register("././serviceWorker.js", {
-            //.register("https://maxartkiller.com/website/fimobile2/HTML/serviceWorker.js", {
                 scope: './'
             })
             .then(reg => console.log("service worker registered"))

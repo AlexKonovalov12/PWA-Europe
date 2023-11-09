@@ -59,52 +59,6 @@ $(window).on('load', function () {
 
             break;
 
-        case "landing":
-            var toastElList = document.getElementById('toastinstall');
-            var toastElinit = new bootstrap.Toast(toastElList, {
-                //autohide: !1,
-            });
-            toastElinit.show();
-
-            /* PWA add to phone Install ap button */
-            var btnAdd = document.getElementById('addtohome')
-            var defferedPrompt;
-            window.addEventListener("beforeinstallprompt", function (event) {
-                event.preventDefault();
-                defferedPrompt = event;
-
-                btnAdd.addEventListener("click", function (event) {
-                    defferedPrompt.prompt();
-
-
-                    defferedPrompt.userChoice.then((choiceResult) => {
-                        if (choiceResult.outcome === 'accepted') {
-                            console.log('User accepted the A2HS prompt');
-                        } else {
-                            console.log('User dismissed the A2HS prompt');
-                        }
-                        defferedPrompt = null;
-                    });
-                });
-            });
-
-            var introswiper = new Swiper(".introswiper", {
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                },
-            });
-            introswiper.on('reachEnd', function () {
-                introswiper.autoplay = false;
-                setTimeout(function () {
-                    window.location.replace("signin.html");
-                }, 5000);
-            });
-            break;
-
         case "index":
 
             /* request money notification remove after time*/
@@ -125,70 +79,6 @@ $(window).on('load', function () {
 
             })
 
-            // /* Progress circle */
-            // var progressCircles1 = new ProgressBar.Circle(circleprogressone, {
-            //     color: '#7297F8',
-            //     // This has to be the same size as the maximum width to
-            //     // prevent clipping
-            //     strokeWidth: 10,
-            //     trailWidth: 10,
-            //     easing: 'easeInOut',
-            //     trailColor: '#d8e0f9',
-            //     duration: 1400,
-            //     text: {
-            //         autoStyleContainer: false
-            //     },
-            //     from: { color: '#7297F8', width: 10 },
-            //     to: { color: '#7297F8', width: 10 },
-            //     // Set default step function for all animate calls
-            //     step: function (state, circle) {
-            //         circle.path.setAttribute('stroke', state.color);
-            //         circle.path.setAttribute('stroke-width', state.width);
-
-            //         var value = Math.round(circle.value() * 100);
-            //         if (value === 0) {
-            //             // circle.setText('');
-            //         } else {
-            //             //  circle.setText(value + "<small>%<small>");
-            //         }
-
-            //     }
-            // });
-            // // progressCircles1.text.style.fontSize = '20px';
-            // progressCircles1.animate(0.65);  // Number from 0.0 to 1.0
-
-            // var progressCircles2 = new ProgressBar.Circle(circleprogresstwo, {
-            //     color: '#3AC79B',
-            //     // This has to be the same size as the maximum width to
-            //     // prevent clipping
-            //     strokeWidth: 10,
-            //     trailWidth: 10,
-            //     easing: 'easeInOut',
-            //     trailColor: '#d8f4eb',
-            //     duration: 1400,
-            //     text: {
-            //         autoStyleContainer: false
-            //     },
-            //     from: { color: '#3AC79B', width: 10 },
-            //     to: { color: '#3AC79B', width: 10 },
-            //     // Set default step function for all animate calls
-            //     step: function (state, circle) {
-            //         circle.path.setAttribute('stroke', state.color);
-            //         circle.path.setAttribute('stroke-width', state.width);
-
-            //         var value = Math.round(circle.value() * 100);
-            //         if (value === 0) {
-            //             //  circle.setText('');
-            //         } else {
-            //             // circle.setText(value + "<small>%<small>");
-            //         }
-
-            //     }
-            // });
-            // // progressCircles2.text.style.fontSize = '20px';
-            // progressCircles2.animate(0.85);  // Number from 0.0 to 1.0
-
-
 
             /* swiper carousel cardwiper */
             var swiper1 = new Swiper(".cardswiper", {
@@ -204,36 +94,68 @@ $(window).on('load', function () {
                 pagination: false
             });
 
-            /* app install toast message */
-            var toastElList = document.getElementById('toastinstall');
-            var toastElinit = new bootstrap.Toast(toastElList, {
-                // autohide: "!1",
-                autohide: true,
-                delay: 5000,
-            });
-            toastElinit.show();
+            // Detects if device is on iOS 
+            const isIos = () => {
+                const userAgent = window.navigator.userAgent.toLowerCase();
+                return /iphone|ipad|ipod/.test(userAgent);
+            }
+            // Detects if device is in standalone mode
+            const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-            /* PWA add to phone Install ap button */
-            var btnAdd = document.getElementById('addtohome');
-            var defferedPrompt;
-            window.addEventListener("beforeinstallprompt", function (event) {
-                event.preventDefault();
-                defferedPrompt = event;
+            // Checks if should display install popup notification:
+            if (isIos() && !isInStandaloneMode()) {
+                var iosElList = document.getElementById('iosinstall');
+                var iosElinit = new bootstrap.Toast(iosElList, {
+                    // autohide: "!1",
+                    autohide: true,
+                    delay: 50000,
+                });
+                iosElinit.show();
+                document.getElementById('toastinstall').style.display = 'none'
+                document.querySelector("main").style.filter = 'brightness(0.5)'
+                iosElList.querySelector(".btn-close").addEventListener('click', () => {
+                    document.querySelector("main").style.filter = 'none'
+                })
+            } else if (!isIos() && !isInStandaloneMode()) {
+                var toastElList = document.getElementById('toastinstall');
+                var toastElinit = new bootstrap.Toast(toastElList, {
+                    // autohide: "!1",
+                    autohide: true,
+                    delay: 10000,
+                });
+                toastElinit.show();
+                document.getElementById('iosinstall').style.display = 'none';
+                document.querySelector("main").style.filter = 'brightness(0.5)';
+                toastElList.querySelector(".btn-close").addEventListener('click', () => {
+                    document.querySelector("main").style.filter = 'none';
+                })
+                /* PWA add to phone Install ap button */
+                var btnAdd = document.getElementById('addtohome');
+                var defferedPrompt;
+                window.addEventListener("beforeinstallprompt", function (event) {
+                    event.preventDefault();
+                    defferedPrompt = event;
 
-                btnAdd.addEventListener("click", function (event) {
-                    defferedPrompt.prompt();
+                    btnAdd.addEventListener("click", function (event) {
+                        defferedPrompt.prompt();
 
 
-                    defferedPrompt.userChoice.then((choiceResult) => {
-                        if (choiceResult.outcome === 'accepted') {
-                            console.log('User accepted the A2HS prompt');
-                        } else {
-                            console.log('User dismissed the A2HS prompt');
-                        }
-                        defferedPrompt = null;
+                        defferedPrompt.userChoice.then((choiceResult) => {
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('User accepted the A2HS prompt');
+                            } else {
+                                console.log('User dismissed the A2HS prompt');
+                            }
+                            defferedPrompt = null;
+                        });
                     });
                 });
-            });
+            } else if (isInStandaloneMode()) {
+                document.querySelector("main").style.filter = 'none';
+                document.getElementById('iosinstall').style.display = 'none';
+            }
+
+           
 
             break;
 

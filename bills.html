@@ -29,6 +29,9 @@
 
     <!-- swiper carousel css -->
     <link rel="stylesheet" href="assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     
 
     <!-- style css for this template -->
@@ -606,7 +609,7 @@
         <div class="container" style="padding-bottom: 10px;">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link " href="index.html">
+                    <a class="nav-link active" href="index.html">
                         <span>
                             <i class="nav-icon bi bi-house"></i>
                             <span class="nav-text">Главная</span>
@@ -628,23 +631,22 @@
                             <img src="assets/img/footer_icon.png" class="nav-icon" alt="" />
                         </span>
                         <div class="nav-menu-popover justify-content-between">
-                            <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('#');">
+                            <button type="button" class="btn btn-lg btn-icon-text" onclick="window.location.replace('#');">
                                 <i class="bi bi-slash-lg size-32"></i><span>Шлагбаум</span>
                             </button>
-
+    
                             <button type="button" class="btn btn-lg btn-icon-text"
                                 onclick="window.location.replace('bills.html');">
                                 <i class="bi bi-credit-card size-32"></i><span>Платежи</span>
                             </button>
-
+    
                             <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('#');">
-                                <i class="bi bi-bandaid size-32"></i><span>Врач</span>
+                                onclick="window.location.replace('call-specialist.html');">
+                                <i class="bi bi-person-fill-exclamation size-32"></i><span>Заявка</span>
                             </button>
-
+    
                             <button type="button" class="btn btn-lg btn-icon-text"
-                                onclick="window.location.replace('#');">
+                                onclick="window.location.replace('emergency.html');">
                                 <i class="bi bi-house-exclamation size-32"></i><span>Авария</span>
                             </button>
                         </div>
@@ -674,7 +676,6 @@
 
 
     <!-- Required jquery and libraries -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 
